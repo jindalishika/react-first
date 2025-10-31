@@ -6,16 +6,16 @@ import Skills from './skills.jsx'
 import Student from './student.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [display, setDisplay] = useState("student")
 
   return (
     <>
       <div>
-       <h1> Checkboxes</h1>
-       <Student />
-       <br/>
-       <hr/>
-       <Skills />
+       <h1> React</h1>
+       <button onClick={()=> setDisplay("student")}>Go to Student</button>
+       <button onClick={()=> setDisplay("skills")}>Got to skills</button>
+       { display=="skills" ? <Skills /> : <Student /> }
+       
       </div>
     </>
   )
