@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Skills from './skills.jsx'
+import Student from './student.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,9 @@ function App() {
     <>
       <div>
        <h1> Checkboxes</h1>
+       <Student />
+       <br/>
+       <hr/>
        <Skills />
       </div>
     </>
