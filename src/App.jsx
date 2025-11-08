@@ -18,8 +18,33 @@ function App() {
     name: "Alice",
     age: 21,
     city: "Bangalore"
+  },
+  {
+    name: "Bob",
+    age: 24,
+    city: "Chennai"
+  },
+  {    name: "Eve",
+    age: 22,
+    city: "Kolkata"
+  },
+  {    name: "Charlie",
+    age: 23,
+    city: "Hyderabad"
   }
   ]
+
+  const [cardStyle, setCardStyle] = useState({border: "1px solid black",
+            padding: "10px",
+            borderRadius: "10px",
+            width: "250px",
+            height: "330px",
+            margin: "10px",
+            boxSizing: "border-box",
+            background: "white",
+            color: "#000"})
+  const [imgStyle, setImgStyle] = useState({width: "200px", display: "block", margin: "8px auto"})
+  const [infoStyle, setInfoStyle] = useState({paddingLeft: "20px", textAlign: "left", fontSize: "10px"})
 
   return (
     <>
@@ -31,11 +56,11 @@ function App() {
         {display == "skills" ? <Skills />
           : display == "student" ? <Student />
             : (
-              users.map((user, index) => (
-                <div key={index}>
-                  <User user={user} />
-                </div>
-              ))
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", margin: "10px" }}>
+                {users.map((user, index) => (
+                  <User key={index} user={user} cardStyle={cardStyle} imgStyle={imgStyle} infoStyle={infoStyle} />
+                ))}
+              </div>
             )
         }
       </div>
